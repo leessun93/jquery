@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+
+/*
+public int getNo(String name){
+	int no = 3;
+	return no;
+}*/
+		//이름있는함수(기명, 선언적함수) -->정의 부분이 해석된다
+		function testA(){//함수 정의는 아래쓰나 위에 쓰나 미리 찾아놓기때문에 testA();를 위에써도 실행이 된다 스테틱영역에 올리는것과 결이 비슷하다고 생각하면 좋다
+			console.log("testA()함수 실행");
+		}//이건 함수를 선언만 해놓은거기때문에 브라우져 화면에서 실행되지 않음 이걸 따로 사용해야 쓸 수 있음
+		
+		
+		//실행
+		testA(); //정의부분이 아래에 있어도 실행됨
+		//////////////////////////////////////////////////////////////////////////////////////////////////////
+		
+		//이름없는함수(익명)
+		
+	
+		
+		var testB = function(){ // 자바에는 없는개념 변수에 함수를 넣어사용한다
+			console.log("익명함수 실행");
+		}//정의하자마자 써버리는 딱 한번써버릴 재활용의 여지가 없을때 이걸 쓴다고는 하는데 허허 참
+		
+		testB();//이건 선언(function)위에 만들어놓으면 실행이 안됨
+		
+		
+		
+		
+</script>
+</body>
+</html>
+	

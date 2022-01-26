@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>스크립트 예제</h1>
+	<!--  html 주석 -->
+	<script type="text/javascript">
+		/*변수선언*/
+		
+		console.log("**********변수선언***********");
+		var no = 3; // int
+		var str; //string
+		var boo; //boolean
+		
+		str = "안녕하세용";
+		console.log(no); //3
+		console.log(str); //안녕하세요
+		
+		console.log(typeof no);
+		console.log(typeof str);
+		
+		console.log(typeof boo);//undefined 아직 변수에 넣은게 없음
+		boo = true;
+		console.log(typeof boo);//boolean 위에 불린 넣음
+		boo = "이선흠";
+		console.log(boo);//이선흠 //바로위에 이름 스트링 넣음
+		console.log(typeof boo);// 이제 스트링
+		
+		var person = "흠우성";
+		var person = "방탄흠년단";//위부터 순서대로 내려오기떄문에 마지막인 흠년단으로 저장됨
+		
+		console.log(person);
+		
+		var myVar1;
+		var myVar2 = null;
+		
+		console.log(myVar1); // undefined 이건 값이 없는거고
+		console.log(myVar2); // null 이건 널이라는 값이 들어있는것 널 또한 값이다.
+		
+		console.log("================================================================");
+		console.log("123" == 123); // 문자와 숫자인데 자바에서는 같다라고 나온다 미쳔나보다
+		console.log("123" === 123); //3개는 엄격하게 같냐라는 뜻으로 문자와 숫자로 다르다고 나온다 어이없는 개념이다
+		
+		console.log(myVar1 == myVar2); //undefined == null 대충 없는거랑 없다고 선언한거랑 같다라고해줌
+		console.log(myVar1 === myVar2); //undefined === null 엄격하게 둘은 다른거다라고 말함 미쳔나봐
+		
+		console.log("" == false); // true
+		console.log("" == 0 ); //true 
+		console.log(0 == false ); //true //진짜 미쳔나봐 이런것들은 뭔가 햇갈리니까 되도록이면 쓰지말자
+		
+		
+	</script>
+</body>
+</html>
