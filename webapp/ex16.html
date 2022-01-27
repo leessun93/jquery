@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div>
+		<button id="btn" type="button">js test</button>
+		<h1 id="display">이름 출력 영역</h1>
+	</div>
+	<script type="text/javascript">
+		window.onload = function(){
+		
+			//html->객체화
+			var testButton = document.getElementById("btn");// 도큐먼트의 겟 엘리멘트 바이 아이디(아이디이름), 전부 객채화 해서 관리한다
+			var testArea = document.getElementById("display");//h1영역을 객체화
+			//버튼을 클릭했을때
+			testButton.onclick = function(){
+				console.log("버튼클릭");
+				testArea.innerHTML = "<font color='red'>홍길동</font>";
+			};
+			
+			
+			
+		};
+	
+	</script>
+</body>
+</html>

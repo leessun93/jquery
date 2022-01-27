@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>Insert title here</title>
+<script type="text/javascript" src="/jqueryex/jquery/jquery-1.12.4.js"></script>
+</head>
+<body>
+	
+
+	<ul>
+		<li> 순서1 순서1 순서1 순서1 순서1 </li>
+		<li> 순서2 순서2 순서2 순서2 순서2 </li>
+		<li> 순서3 순서3 순서3 순서3 순서3 </li>
+		<li> 순서4 순서4 순서4 순서4 순서4 </li>
+	</ul>
+	
+
+	<p> 텍스트1 텍스트1 텍스트1 텍스트1 텍스트1 </p>
+	<p> 텍스트2 텍스트2 텍스트2 텍스트2 텍스트2 </p>
+	<p> 텍스트3 텍스트3 텍스트3 텍스트3 텍스트3 </p>
+	<p> 텍스트4 텍스트4 텍스트4 텍스트4 텍스트4 </p>
+
+</body>
+<script type="text/javascript">
+	var tag = $("li");
+	console.log(tag);
+	
+	//자바스크립트
+	window.onload = function(){
+		var litags = document.getElementsByTagName("li");
+		console.log(litags);
+	}
+	
+	
+	//제이쿼리
+	$("li").css("color", "red"); //시작하자마자 li테그를 찾아서 컬러 레드로 바꿔버린다
+	$("p").css("color", "blue");
+	
+	//자바스크립트와 제이쿼리 섞어쓰지않게 잘 구분해두자
+</script>
+
+
+</html>

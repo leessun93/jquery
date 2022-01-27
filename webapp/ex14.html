@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+		<script type="text/javascript">
+		
+		var guestbookVo = {// no: 인데 no = 이런식으로 실수 많이함
+				no:1,
+				name:"이선흠",
+				password: "1234",
+				content:"첫방문입니다.",// 필드
+				showInfo: function(){return3+4}//메소드
+		};
+		
+		console.log(guestbookVo.no);
+		console.log(guestbookVo.name);
+		console.log(guestbookVo.password);
+		console.log(guestbookVo.content);
+		console.log(guestbookVo.showInfo);
+		
+		guestbookVo.regDate = "2022-01-27";
+		console.log(guestbookVo);
+		
+		//no name hp company
+		
+		var personVo = {}//객체를 만들고
+		
+		personVo.no = 1;// 필드에 값을 넣고
+		personVo.name = "유재석";
+		personVo.hp = "010-2222-2222";
+		personVo.company = "02-2222-2222"
+		
+		console.log(personVo);
+	
+		
+		
+		
+		</script>
+	
+	
+</body>
+</html>

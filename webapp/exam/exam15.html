@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" src="/jqueryex/jquery/jquery-1.12.4.js"></script>
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<ul>
+		<li id="first" class="red">첫번째 아이템입니다.</li>
+		<li id="second" class="blue"><strong>두번째 아이템입니다.</strong></li>
+		<li id="third" class="del">세번째아이템입니다.</li>
+		<li><strong>네번째 아이템입니다.</strong></li>
+		
+	</ul>
+	<button id="btn" type="button">li테그 추가버튼</button>
+</body>
+<script type="text/javascript">
+	
+	$("ul").on("click","li", function(){// 클릭은 ul이 받고 일은 li한테 시켜라! 위임하라
+		var $this = $(this);
+		console.log($this.text());
+		
+		$this.text("이선흠");
+	});
+	
+	
+	/*
+	$("li").on("click", function(){
+		var tag = $(this); // $this처럼 $을 변수로 붙여서 사용할 수 있다
+		tag.text();
+		console.log(tag.text());
+		
+	});*/
+
+
+
+
+
+	$("#btn").on("click", function(){
+		console.log("클릭");
+		$("ul").append("<li id='5'>다섯번째 아이템입니다.</li>");
+		$("ul").append("<li id='6'>여섯번째 아이템입니다.</li>");
+		$("ul").append("<li id='7'>일곱번째 아이템입니다.</li>");
+	});
+
+</script>
+
+</html>

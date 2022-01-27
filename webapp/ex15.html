@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//배열 만들기 (리스트)
+		var personList = [];
+		
+		//정우성
+		var person01 = {
+			name:"정우성",
+			hp:"010-1010-1020",
+			company: "02-2252-2525"
+			
+		};
+		console.log(person01);
+		
+		var personVo02 = {}
+		personVo02.name = "유재석";
+		personVo02.hp = "010-3333-3333";
+		personVo02.company = "02-2698-5896";
+		console.log(personVo02);
+		
+		var personVo03 = {
+				name: "이효리",
+				hp: "010-4444-4474"
+		}
+		personVo03.company = "02-4444-4848";
+		console.log(personVo03);
+		
+		//배열에 vo 추가
+		personList.push(person01);
+		personList.push(personVo02);
+		personList.push(personVo03);
+		
+		console.log(personList);
+		
+		//for name 출력
+		for(var i=0; i<personList.length; i++){
+			console.log(personList[i].name);
+		}
+		
+	</script>
+</body>
+</html>
