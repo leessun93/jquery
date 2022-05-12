@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<ul>
+		<li>1번</li>
+		<li>2번</li>
+		<li>3번</li>
+	</ul>
+	<p> p테그 1번</p>
+	<p> p테그 2번</p>
+	<p> p테그 3번</p>
+</body>
+
+<script type="text/javascript">
+	var tag = $("li");
+	console.log(tag);
+	var ptg = $("p");
+	console.log(ptg);
+	
+	window.onload = function(){
+	    var litag = document.getElementsByTagName("li");
+	    console.log(litag);
+	}
+	
+	//제이쿼리
+	$("li").css("color", "red"); //시작하자마자 li테그를 찾아서 컬러 레드로 바꿔버린다
+	$("p").css("color", "blue");
+</script>
+</html>
