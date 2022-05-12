@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript" src="/jqueryex/jquery/jquery-1.12.4.js"></script>
+	
+	<script type="text/javascript">
+		document.write("도큐먼트 헤드에 붙임");
+	</script>
 </head>
 <body>
 
@@ -11,16 +16,136 @@
 		<li>2번</li>
 		<li>3번</li>
 	</ul>
+	<script type="text/javascript">
+		document.write("도큐먼트 코드중간에 붙임");
+	</script>
 	<p> p테그 1번</p>
 	<p> p테그 2번</p>
 	<p> p테그 3번</p>
+	
+
 </body>
 
 <script type="text/javascript">
-	var tag = $("li");
-	console.log(tag);
-	var ptg = $("p");
-	console.log(ptg);
+	//0번 제이쿼리 파일을 임포트 해주자 헤드 위에 있음
+	
+	//1번 도큐먼트 
+	//어디든 쓸 수 있다 헤드에 쓰면 제일 위에서부터 써지고 바디 아래 쓰면 맨 아래써진다
+	//html코드 중간에 쓰면 코드 사이에 중간에 작성된다.
+	//되도록이면 한군데 붙여서 모아두는게 좋다. 특히 제이쿼리와 섞이지 않도록 조심함이 좋다.
+	document.write("도큐먼트");
+
+	//2번 console.log();
+	//브라우져의 콘솔창에 sysout처럼 결과를 띄운다.
+	//중간중간 체크할때 유용하다
+	console.log("브라우저 콘솔창에 띄우는 코드 콘솔.로그");
+	
+	//3번 console.log(typeof ); 타입을 알려준다
+	//자바 스크립트에서는 var로 string, number(int),  boolean등이 다 묶이니 체크가 필요할때 사용하자
+	
+	console.log(typeof 1); //number
+	console.log(typeof 'char');//String
+	console.log(typeof (6<=5));//boolean
+	
+	//4번 String 에서 "''" 
+	//작은 따옴표를 쓰기위해서 큰따옴표로 시작 큰따옴표를 쓰기위해 작은따옴표로 시작
+	console.log("스트링에서 ''를 써볼게요");
+	console.log('스트링에서 ""를 써볼게요');
+	//4.2번 \t 띄어쓰기 \n 줄바꾸기 \\  \이거 사용
+	console.log("안녕하세요\t반갑습니다");//띄어쓰기
+	console.log("안녕하세요\n반갑습니다");//줄바꾸기
+	console.log("안녕하세요\\반갑습니다");// \    <--사용하려고
+	
+	//5번 var 
+	//string int car boolean double 등등 자료형들이 var 하나로 합쳐짐
+	var num = 3; //number
+	var str = "String"; //String
+	var boo = true; // boolean
+	
+	console.log(num +"= number \n" + str +"= String \n" + boo +"= boolean");
+	
+	//5.2번 var는 같은변수로 여러번 선언 가능하다
+	//마지막 선언으로 저장된다.
+	
+	var guitar = "gibson";
+	var guitar = "fender";
+	var guitar = "suhr";
+	var guitar = "anderson";
+	var guitar = "tyler";
+	
+	console.log(guitar);// 마지막 선언인 tyler로 출력된다.
+	
+	//6번 console.log(typeof 변수); 하면 변수에 값을 대입시에 값이 결정된다. 
+	var cha;
+	console.log(typeof cha); //undefined 선언만하고 안에 값이 없어 아무것도 안나온다.
+	
+	cha = "char에 값 넣음";///
+	console.log(typeof cha); //undefined에서 String으로 값이 바뀌었다.
+	
+	cha = 1368;
+	console.log(typeof cha); //String 에서 number로 바뀌었다.
+	
+	//null의 경우 자료형은 있지만 값이 없는거고
+	//undefiend는 자료형조차 결정되지 않은 상태이다.
+	
+	//7번 if else switch for while 등을 사용 가능하다.
+	//80점 이상시 A 60점이상시 B 나머지는 C등급으로 표시하시오
+	var grade = 100;
+	if(grade >= 80){
+	    console.log("A등급");
+	}else if(grade>= 60){
+	    console.log("B등급");
+	}else{
+	    console.log("C도 아깝다 넌 낙제!!");
+	};
+	
+	//과목 코드값이 1 2 3 일때 a동 b동 c동 나머지는 집에가세요 를 출력하시오
+	var code = 1;
+	switch(code){
+		case 1:
+			document.write("a동으로 가세요");
+		break;
+		case 2:
+			document.write("b동으로 가세요");
+		break;
+		case 3:
+		    document.write("c동으로 가세요");
+		break;
+		default:
+		    document.write("집에가세요");
+		break;
+	};	
+	//6의 배수이자 14의 배수중 가장 적은 정수를 찾으시오
+	var x = 1;
+	
+	while(true){
+	    
+	    if(x%6 == 0 && x%14 == 0){
+	        document.write("6과 14의 배수중 가장 적은 정수는" + x + "입니다.");    
+	        break;
+	    }
+	    x++;
+	}
+	
+	//8번 기명함수와 익명함수
+	//익명함수의경우 선언 다음에 사용해야한다.
+	//var func라고 변수를 선언해주어서 익명이라고 하긴 이상한데
+	//함수 선언 이전에 예상치 못하게 함수가 사용됨을 방지한다.
+	
+	var func = function(){
+	    console.log("익명함수");
+	};
+	
+	func();
+	
+	//기명함수의 경우 선언을 나중에 해주더라도 적용이된다. 일단 화면이 로딩되면서 
+	//스크립트를 한번 전체적으로 읽기때문에 먼저 선언해도 브라우져가 알아먹는다.
+	func2();
+	function func2(){
+	    console.log("기명함수");
+	};
+	
+	
 	
 	window.onload = function(){
 	    var litag = document.getElementsByTagName("li");
