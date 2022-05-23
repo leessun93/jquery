@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript" src="/jqueryex/jquery/jquery-1.12.4.js"></script>
+</head>
+<body>
+
+</body>
+
+	<script type="text/javascript">
+	
+	name = "mike";
+	console.log(name);
+	/* 이 경우 큰 프로젝트에서 다른사람이 name이라는 변수를 사용할 수 있음으로 위험하다 따라서 let을 쓰자 */
+	//let name = "james";
+	/*라고 사용하면 위에서 name을 사용하였기 때문에 오류로 나타내준다  */
+	console.log(name);
+	
+	const PI = 3.14;
+	//const는 *절대 변하지 않을 상수*를 나타낸다 변수도 다른사람이 알기 쉽게 대문자로 표현해주는게 좋다.
+	//대형 프로젝트를 할때는 일단 콘스트로 해주고 나중에 렛으로 바꿔주면 중복이 없어 좋다고 한다.
+	console.log('my name is' + name); //인데 자바스크립트에서는"my name is ${name}" 이라고 써준다고 한다.
+	
+	//alert 알려줌 prompt 입력받음 confirm 확인받음 
+	alert("hellow world"); //새로운 팝업창으로 띄워줌 확인누르면 사라짐 일방적으로 알림
+	const getname = prompt("이름을 입력하세요", "age = 30"); //팝업창에서 값을 받을때 사용한다. 미리 들어갈 디폴트값(placehold)도 넣어줄수있다
+	
+	const isAdult = confirm("당신은 성인입니까?"); //얼트는 확인만 나오지만 컨핌은 확인 취소 두개가 나와서 불린처럼 트루 펄스로 값을 받는다.
+	console.log(isAdult);
+	/*alert prompt confirm 의 단점은 처리될때까지 스크립트가 멈춤, css로 스타일링이 불가능 따라서 그냥 쓰지말자 너무 촌시럽다. 디자이너가 싫어함*/
+	
+	//String() Number() Boolean() 으로 형변환이 가능하다.
+	console.log(Number(true), Number(false))// 특이하게 트루펄스는 넘버로 형변환시 true 1과 false 0을 반환한다.
+	//Boolean() 으로 형변환시 0, 빈 문자열, null, undefined, NaN 은 false로 변환된다.
+	//주의사항
+	console.log(Boolean(0)); //false
+	console.log(Boolean('0')); //true
+	console.log(Boolean('')); //false
+	console.log(Boolean(' ')); //ture
+	
+	//연산자 줄여쓰기
+	let num = 10;
+	//num = num + 5;
+	//console.log(num); // 15인데 이걸 더 줄여 써보자
+	num /= 5;
+	console.log(num);
+	// += -= *= %= /= 등등으로 사용가능하다.
+	
+	//if문 자바랑 똑같다 쉬움
+	let getAge = 19
+	if(getAge > 19){
+	    console.log("성인인증이 완료되었습니다.");
+	}else if(getAge <0){
+	    console.log("잘못 입력하셨습니다.");
+	}else{
+	    console.log("쪼꼬만게 어서 집에가 임마");
+	}
+	
+	// ||(==or) 하나라도 ture면 true 모두 false여야 false, &&(==and) 모든값이 true여야 true 하나라도 false 이면 false, !(==not) ture면 false false면 true
+	
+	//for문 도 똑같음 쉽다.
+	for(let i = 0; i<12; i++ ){
+	    console.log(i + "숫자");
+	}
+	
+	//while문도 똑같다.
+	let i = 1;
+	while(i <10){
+	 	console.log("while 입니다" + i);   
+	    i++;
+	}
+	//do, break, continue 도 똑같다.
+	//swith case 문도 똑같다.
+	let food = "파스타";
+	switch(food){
+		case '파스타' :
+		    console.log("느끼");
+		    break;
+		case '긴띠띠개' :
+		    console.log("짜");
+		    break;
+		case '피자' :
+		    console.log("살찜");
+		    break;
+		case '술' :
+		    console.log("달림");
+		    break;
+		default :
+		    console.log("사람이 못먹는겁니다.");
+	}
+	
+	</script>
+	
+</html>
