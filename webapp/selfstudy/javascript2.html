@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript" src="/jqueryex/jquery/jquery-1.12.4.js"></script>
+</head>
+<body>
+
+</body>
+
+	<script type="text/javascript">
+	
+	//var 는 let 이나 const 랑 다르게 호이스팅이 된다 let과 const는 TDZ 템포럴 데드존 그러니까 변수안의 값이 선언되지 않은곳에서는 사용불가능하다(선언 전에) 반면 var는 tdz없이 호이스팅되어 다 사용가능하다
+	
+	//var는 함수 스코프 let, const는 블록스코프이다 함수 if for while try/catch등에서 쓰인다 {}안에서만 쓰임 예외로var도 함수 밖으로 나갈수 없다.
+	//var보단 const로주로 써야 예측불가능한 버그를 줄인다.
+	
+	//생성자 함수
+	//ex1
+	function Users(name, age){
+	    this.name = name;
+	    this.age = age;
+	    this.sayName = function(){
+	        console.log(this.name + "입니다!");
+	    }
+	}
+	
+	let user1 = new Users("김만덕", 62);
+	user1.sayName();
+	//ex2
+	function Item(title, price){
+	    this.title = title;
+	    this.price = price;
+	    this.showPrice = function(){
+	        console.log(title+ "의 가격은"+ price + "입니다");
+	    }
+	}
+	
+	const item1 = new Item("펜더", 3200000);
+	const item2 = new Item("깁슨", 5800000);
+	const item3 = new Item("존써", 4300000);
+	
+	
+	item1.showPrice();
+	item2.showPrice();
+	item3.showPrice();
+	
+	console.log(item1, item2, item3);
+	
+	//computed property
+	//ex1
+	let n = "name";
+	let a = "age";
+	
+	const user = {
+		[n] : "mike",
+		[a] : "30",
+		[1 +4] : 5, //이건 뭘까 계산식을 넣을 수 있는데 왜넣는걸까
+	}
+	
+	console.log(user);
+	//ex2
+	function makeObj(key, val){
+	    return{
+	        [key] : val,
+	    };
+	}
+	
+	const obj = makeObj("나이", 30);	
+	console.log(obj);
+	
+	//복사할때
+	const userid = {
+		name: "mike",
+		age: 30,
+	};
+	//Object.assign({초기값}, 가져올변수);을 사용해야 원래것에 훼손을 주지 않고 값만 복사해서 새로 사용할 수 있다.
+	const user2 = Object.assign({}, userid);
+	user2.name = "김갑룡";
+	console.log(user2);
+	console.log(userid);
+	//Object.keys(); == key값들만 보려고 할때
+	console.log(Object.keys(user2)); //name, age
+	//Object.values(); == 벨류값만 보고자 할 때
+	console.log(Object.values(userid)); // "김갑룡", 30;
+	//Object.entries(); 하면 키 벨류  둘다 보여준다 배열로 만들어서 보여준다.
+	const result = Object.entries(user2);
+	console.log(result);
+	
+	//Object.fromEntries(); 배열을 객체로 만들어준다.
+	let arr = [
+	    ["mon", '월'],
+	    ["tue", '화'],
+	    ['sun', '해'],
+	]
+	const arrResult = Object.fromEntries(arr);
+	console.log(arrResult);
+	
+	</script>
+</html>
