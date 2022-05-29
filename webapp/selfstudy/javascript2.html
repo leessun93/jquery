@@ -260,6 +260,64 @@
 	yasword("요네도 똑같은 세끼네") //없다
 	
 	
+	//Array 	push():뒤에삽입, pop()뒤에 삭제, unshift()앞에삽입, shift()앞에삭제
+	//.splice(n,m) == n번째 요소부터 m개 지워라
+	let newArr = [1,2,3,4,5,6];
+	newArr.splice(2,3); // 2부터 3개 지우세요
+	console.log(newArr); // == 1,2,6
+	//.splice(n,m ,추가할거1,2,3,); n부터 m개 지우고 그뒤에것들을 추가해달라
+	newArr.splice(2,1, 100,200,300); //2부터 1개지우고 100 200 300을 추가해주세요
+	console.log(newArr);
+	//그냥 추가만할 때
+	newArr.splice(1,0, "문자를", "추가해볼", "깨욧"); //1번앞에 하나도 지우지말고 추가해달라
+	console.log(newArr);
+	//.splice()는 삭제된 요소를 반환한다.
+	let oldArr = [1,2,3,4,5,6];
+	let arrrResult = oldArr.splice(2,3);
+	console.log(arrrResult); //== 2번부터 3개 없앤 3 4 5 값이다.
+	console.log(oldArr);
+	//.slice(n,m) n부터 m까지 반환
+	oldArr = [1,2,3,4,5,6];
+	let spliceResult = oldArr.splice(2,3); //2번부터 3개를 반환하라
+	console.log(spliceResult); //== 3 4 5
 	
+	//.concat([]) == 합쳐서 새 배열로 반환
+	let smallArr = [1,2];
+	smallArr = smallArr.concat(["일","이"]);
+	console.log(smallArr);
+	
+	//forEach() 로 배열을 순회하기
+	let forArr = ['김갑룡', '조덕철', '강해상'];
+	
+	forArr.forEach((name,index) =>{
+	    console.log(index+1 + "." + " "+ name);
+	});
+	
+	//indexOf() 찾아달라
+	smallArr = [1,2,3,4,5,6,7,3,8];
+	console.log(smallArr.indexOf(3)); // == 2
+	console.log(smallArr.indexOf(3, 3)); // 3다음부터 3을 찾아달라 = 7번
+	console.log(smallArr.lastIndexOf(3)); // 맨 뒤에서부터 3을 찾아달라 == 7
+	//includes(값);포함하는지 확인
+	console.log(smallArr.includes(8)); //true
+	console.log(smallArr.includes(9)); //false
+	
+	//find(fn), findIndex(fn) 는 복잡한 펑션(함수)를 넣어서 찾을 수 있는 함수이다. ex 짝수, 성인 등등, *첫버쨰 값만 반환함
+	let reResult = smallArr.find((item) => {
+	    return item % 2 === 0;
+	});
+	
+	console.log(reResult);
+	//.filter(fn) == 만족하는 모든 요소를 반환한다 
+	let reReResult = smallArr.filter((item) => {
+	    return item % 2 === 0;
+	}); //배열로 만들어서 [2,4,6,8] 을 반환하였다. 위의 find는 한개반환 filter 는 만족하는 값 전부 반환
+	
+	console.log(reReResult);
+	
+	//reverse() == 역순으로 재정렬한다
+	console.log(smallArr.reverse());
+	
+
 	</script>
 </html>
