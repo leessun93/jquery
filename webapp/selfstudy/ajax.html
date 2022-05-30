@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="/jqueryex/jquery/jquery-1.12.4.js"></script>
+</head>
+<body>
+	<h1>제목</h1>
+	<span>내용인데 뭐지 하여튼 그거 스판</span>
+	<p>피테그인데 ㅎㅎ</p>
+
+</body>
+	<script type="text/javascript">
+	/* $("button").click(function(){
+	    $.ajax({
+	    url : "${pageContext.request.contextPath }/api/gb/add",
+	    type : "post",
+	    contentType : "application/json",
+	    data : {name: ”홍길동"},
+	    dataType : "json",
+	    success : function(result){
+
+	    /*성공시 처리해야될 코드 작성*/
+/* 
+	    },
+	    error : function(XHR, status, error) {
+
+	    console.error(status + " : " + error);
+
+	    }
+	    });
+	    }); */ // 이게 ajax의 기본 뼈대이다. */
+	    
+	    
+	    //json은 읽기쉽고 키와 벨류로 이루어져있으며 서버와 스트링으로 키벨류를 주고 받아서 다시 오브젝트로 만들어주어야한다 다양한 플랫폼에서 사용가능한 서버와의 비동기 통신 언어이다
+	    //1.object to JSON
+	    //Stringfy(obj)
+	    let json = JSON.stringify(true);
+	    console.log(json);
+	    //2.JSON to Object
+	    //parse(json)
+	</script>
+</html>
